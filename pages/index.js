@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useState, useEffect } from 'react';
+import NFT from './nft'
 
 export default function Home() {
   const [feed, setFeed] = useState([]);
@@ -12,19 +13,19 @@ export default function Home() {
 
     const mockedData = [
       {
-        image: 'sjklfsjf',
+        image: 'https://studentedgeapplication.azureedge.net/articles/af917662-3be9-4009-b5d0-194dc8cdd55a.jpg',
         caption: 'This is a succinct caption',
         owner: 'Esteban',
-        price: 'Ξ 0.5',
+        price: '0.5',
         uuid: '98fs080f9s8',
         userId: '1',
         author: 'Kanye West'
       },
       {
-        image: 'sjklfsjf',
+        image: 'https://static.theceomagazine.net/wp-content/uploads/2021/07/29092208/jay-z.jpg',
         caption: 'On the other hand this is a very long caption, we want to see how this renders in the view you know? Hahahaha what a long caption dude.',
         owner: '',
-        price: 'Ξ 0.8',
+        price: '0.8',
         uuid: '98fs080f9s8',
         userId: '1',
         author: 'Jay Z'
@@ -49,14 +50,14 @@ export default function Home() {
 
         {feed?.map(nft => {
           return(
-            <div key={nft.uuid}>
-              <p >{nft.author}</p>
-              <p>{nft.image}</p>
-              {nft.owner && 
-                <p>Owned by <strong>{nft.owner}</strong></p>
-              }
-              <p>{nft.price}</p>
-            </div>
+            <NFT
+              key = {nft.uuid}
+              author = {nft.author}
+              imageUrl = {nft.image}
+              owner = {nft.owner}
+              price = {nft.price}
+              caption = {nft.caption}
+            />
           )
         })}
         
