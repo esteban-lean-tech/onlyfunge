@@ -10,11 +10,11 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-      width: 1400,
+      width: '70%',
       marginTop: 30
     },
     media: {
-        height: 2000,
+        height: 200,
     },
   });
 
@@ -47,8 +47,8 @@ export default function NFT({author, imageUrl, owner, price, caption}) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Purchase Ξ{price}
+          <Button size="small" variant="contained" color="primary">
+            Purchase Ξ {price}
           </Button>
         </CardActions>
       </Card>
