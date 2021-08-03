@@ -7,8 +7,7 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
     <script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/smartweave@0.4.41/lib/index.min.js"></script> -->
-    <script src="http://localhost:8000/smartweave.bundle.js"></script>
+    <script src="http://localhost:8000/bundle.js"></script>
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -16,9 +15,10 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      const contractId = "pnTOOL1MebQ-c4Dw4zgMKvCdPbvsCC7JTTDmEjAr0qI";
       async function getFeed(contractId) {
         const arweaveInstance = Arweave.init();
-        const latestState = await SmartWeave.readContract(
+        const latestState = await smartweave.readContract(
           arweaveInstance,
           contractId
         );
@@ -82,7 +82,7 @@
       );
       feed = (async () => {
         console.log("feed");
-        getFeed();
+        getFeed(contractId);
       })();
     </script>
   </body>
