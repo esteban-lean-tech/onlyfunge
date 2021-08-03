@@ -32,3 +32,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 > You need to have `npm install -g arweave-deploy` installed
 
 `yarn build && arweave deploy out/packaged.html --key-file <path to your keyfile>`
+
+## Run Smart Contract 
+`smartweave create ./contracts/immortagram.js ./contracts/initialState.json  --key-file <path to your keyfile>`
+> Run `arweave status <txn Id>` to view status 
